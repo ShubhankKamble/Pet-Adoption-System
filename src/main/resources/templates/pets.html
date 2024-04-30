@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Pet Adoption Platform</title>
+    <style>
+        body {
+           font-family: Arial, sans-serif;
+           margin: 0;
+           padding: 0;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient( #FF5733 0%, #ac1ce6 100%);
+        }
+
+        header {
+           background-color: #333;
+           color: #fff;
+           padding: 12px;
+           text-align: center;
+        }
+        
+        
+              nav ul {
+                   list-style-type: none;
+                   padding: 0;
+              }
+
+              nav ul li {
+                   display: inline; 
+                   margin-right: 20px;
+              }
+
+              nav ul li a {
+                   color: #fff;
+                   text-decoration: none;
+                   cursor: pointer;
+              }
+              
+              
+              
+              img {
+                    box-shadow: 10px 10px 5px lightblue;
+                     border-radius: 50%;
+              }
+
+              .container {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  padding: 35px 70px;
+              }
+
+              .column {
+                  flex: 1;
+                  padding: 25px;
+              }
+
+              .column img {
+                  width: 50%;
+                  height: auto;
+              }
+              
+              p {
+                  font-size: 16px;
+              }
+              
+              
+              .h2 {
+				  font-size: 40px;
+				  text-align: center;
+			
+			  }
+              
+              
+  
+  /* Animation */
+@keyframes animateLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes animateRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-left {
+    animation: animateLeft 2s ease-out;
+}
+
+.animate-right {
+    animation: animateRight 2s ease-out;
+}
+
+
+table {
+            width: 100%;
+            border-collapse: collapse;
+            box-shadow: 0 0 10px rgba(240, 238, 238, 0.1);
+            background-color: #f1efef;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 18px;
+            align-items: center;
+            justify-content: center;
+            margin: 1px;
+            background-color: rgb(201, 76, 76);
+
+        }
+
+        th,
+        td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #0b0a0a;
+        }
+
+        th {
+            background-color: #eaeeee;
+            color: #0a0808;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+
+  
+  
+  
+              
+              
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Pets Adoption Platform</h1>
+        <nav>    
+            <ul>
+                <li><a onclick="nextPage('login')">Login</a></li>
+                <li><a onclick="nextPage('register')">Register</a></li>
+                <li><a onclick="nextPage('about')">About Us</a></li>
+                <li><a onclick="nextPage('adminlogin')">Admin</a></li>
+            </ul>
+            
+          </div>
+        </nav>
+    </header>
+    <br>
+ 
+ 
+ 
+ 
+                  <section id="about" class="about-section">
+                       <div class="container">
+                            <div class="column animate-left">
+                                 <img src="img1.jpg" alt="Image">
+                            </div>
+                                 <div class="column animate-right">
+                                     <h2>About Us</h2>
+                                              <p>
+                                                   Welcome to Pets Adoption Platform, your go-to destination for finding your perfect furry companion! At Pets Adoption Platform, 
+                                                   we believe that every pet deserves a loving home, and every home deserves the joy of a beloved pet. Whether you're looking for a playful puppy, 
+                                                   a cuddly kitten, or a loyal older pet, we've got you covered. Our platform connects compassionate adopters with adorable pets from shelters and rescue organizations across Pune. 
+                                                   Browse through our extensive database of pets waiting for their forever homes, and embark on a journey of companionship and unconditional love. 
+                                                   Start your adoption journey today and make a difference in the life of a deserving pet! 
+                                              </p>
+                                                   <h3>Saving one animal won't change the world, but for that one animal, the world changes forever.</h3>
+                                                   <h3>The greatness of a nation and its moral progress can be judged by the way its animals are treated.</h3>
+                                                   
+                                 </div>
+                             </div>
+                  </section>
+  
+   
+   <h2 class="h2">Available Pets</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Species</th>
+                <th>Breeds</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="pet : ${pets}">
+                <td th:text="${pet.id}"></td>
+                <td th:text="${pet.name}"></td>
+                <td th:text="${pet.species}"></td>
+
+                <td th:text="${pet.breeds}"></td>
+                
+            </tr>
+        </tbody>
+    </table>
+   
+    
+       
+
+   
+    <script>
+        function nextPage(page) {
+            // Redirect based on the parameter (page)
+            window.location.href = page + '.html';
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save Pets - Pet Adoption</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient( #FF5733 0%, #ac1ce6 100%);
+            
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        h1 {
+            color: #007bff;
+        }
+
+        h2 {
+            color: #28a745;
+        }
+
+        hr {
+            border: 1px solid #dee2e6;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            margin-bottom: 15px;
+        }
+
+        .btn-info {
+            background-color: #17a2b8;
+            border-color: #17a2b8;
+        }
+
+        .btn-info:hover {
+            background-color: #138496;
+            border-color: #117a8b;
+        }
+
+        a {
+            color: #007bff;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="mb-4">Pet Adoption</h1>
+        <hr>
+        <h2>Save Pets</h2>
+        <form action="#" th:action="@{/savePet}" th:object="${pet}" method="POST">
+            <div class="row">
+                <div class="col-md-4">
+                    <input type="text" th:field="*{Name}" placeholder="Pet Name" class="form-control">
+                </div>
+                <div class="col-md-4">
+                    <input type="text" th:field="*{Species}" placeholder="Species" class="form-control">
+                </div>
+                <div class="col-md-4">
+                    <input type="text" th:field="*{Breeds}" placeholder="Breeds" class="form-control">
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-info mt-3">Save Pet</button>
+        </form>
+        <hr>
+        <a th:href="@{/manage.html}" class="d-block mt-3">Back to Pet List</a>
+    </div>
+</body>
+
+</html>

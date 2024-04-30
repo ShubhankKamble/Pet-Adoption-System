@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient( #FF5733 0%, #ac1ce6 100%);
+        }
+
+        .login-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 60%;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .login-form {
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login-form label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .login-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        .login-form input[type="submit"] {
+            background-color: #3498db;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .login-image {
+            width: 30%;
+        }
+
+        .login-image img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .hidden-content {
+            display: none;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        #adoptButton {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        #adoptButton:hover {
+            background-color: #45a049;
+        }
+        
+        
+        
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-form">
+            <h2>Login</h2>
+            <form action="/login" method="post" onsubmit="showContent(); return false;">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <input type="submit" value="Login">
+            </form>
+        </div>
+
+        <div class="login-image">
+           <img src="img9.jpg" alt="Image">
+        </div>
+    </div>
+
+    <div class="hidden-content" id="hiddenContent">
+        <h2>Welcome!</h2>
+        <p>Thank you for logging in..!!</p>
+        <button id="adoptButton" onclick="redirectToAdoptPage()">Adopt Me</button>
+    </div>
+
+    <script>
+        function showContent() {
+            // Hide the login form
+            document.querySelector('.login-form').style.display = 'none';
+
+            // Show the hidden content
+            document.getElementById('hiddenContent').style.display = 'block';
+        }
+
+        function redirectToAdoptPage() {
+            // Redirect to the adopt.html page
+            window.location.href = 'adopt.html';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Pet Adoption Platform</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #6e7638;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient( #FF5733 0%, #ac1ce6 100%);
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .pets-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .pet-card {
+            max-width: 300px;
+            margin: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .pet-card:hover {
+            transform: scale(1.05);
+        }
+
+        .pet-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .pet-details {
+            padding: 20px;
+        }
+
+        .breed-info {
+            font-style: italic;
+            color: #888;
+        }
+
+        .breed-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 40px;
+        }
+
+        .breed-item {
+            margin: 10px;
+            text-align: center;
+        }
+        .action-buttons-container {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .action-buttons-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .action-button {
+            background-color: #db34d0;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .action-button:hover {
+            background-color: #29031c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>About Us</h2>
+        <img src="https://static.wixstatic.com/media/62b8de_b38bcf189c27432c898dcb2f3edfe5c9~mv2.gif" alt="Pet Adoption Team">
+
+        <p>
+            Welcome to our Pet Adoption Platform! We are passionate about connecting loving families with adorable pets in need of a home.
+        </p>
+
+        <p>
+            Our mission is to create a platform that makes the adoption process easy and enjoyable for both pet seekers and pets. Whether you are looking for a furry friend to join your family or you want to find a caring home for a pet, we are here to help.
+        </p>
+
+        <p>
+            Explore our platform, meet the wonderful pets available for adoption, and embark on a journey of companionship and joy. Together, let's make a difference in the lives of these loving animals.
+        </p>
+    </div>
+
+    <h2>Available Pets</h2>
+    <div class="pets-section">
+        <!-- Cat 1 -->
+        
+        <div class="pet-card">
+            <img class="pet-image" src="https://th.bing.com/th/id/R.db8f0cd508a118e815903bfe5d2159c3?rik=87ru6LLlu3lBww&riu=http%3a%2f%2fwallpapercave.com%2fwp%2fMFu0rBk.jpg&ehk=R2vD2OiVyXe14pElwLYPY8v%2fO4LvEwcZQcbsqhhpiBQ%3d&risl=&pid=ImgRaw&r=0" alt="Cat 1">
+            <div class="pet-details">
+                <h3>Cat 1</h3>
+                <p>Species: Cat</p>
+                <p>Breed: Siamese</p>
+                <p class="breed-info">Siamese cats are known for their distinctive color points and social nature.</p>
+            </div>
+        </div>
+
+        <!-- Dog 1 -->
+        <div class="pet-card">
+            <img class="pet-image" src="https://th.bing.com/th/id/OIP.g0p9GzecZBmWjsSYrsvt1AHaE8?rs=1&pid=ImgDetMain" alt="Dog 1">
+            <div class="pet-details">
+                <h3>Dog 1</h3>
+                <p>Species: Dog</p>
+                <p>Breed: Labrador Retriever</p>
+                <p class="breed-info">Labrador Retrievers are friendly, outgoing, and high-spirited companions.</p>
+            </div>
+        </div>
+
+        <!-- Horse 1 -->
+        <div class="pet-card">
+            <img class="pet-image" src="https://t3.ftcdn.net/jpg/06/48/91/48/240_F_648914869_Fr7t3JfGaY52nWIViTzIr21oZ792nYVJ.jpg" alt="Horse 1">
+            <div class="pet-details">
+                <h3>Bird 1</h3>
+                <p>Species: Horse</p>
+                <p>Breed: Arabian</p>
+                <p class="breed-info">Budgerigars make good pets. Because of their social behavior,
+					 they love socializing with their human companions, birds, and other animals.</p>
+            </div>
+        </div>
+
+        <!-- Cat 2 -->
+        <div class="pet-card">
+            <img class="pet-image" src="https://th.bing.com/th/id/OIP.vF08GeDahRGwGN_T0UGHQQHaFj?rs=1&pid=ImgDetMain" alt="Cat 2">
+            <div class="pet-details">
+                <h3>Cat 2</h3>
+                <p>Species: Cat</p>
+                <p>Breed: Maine Coon</p>
+                <p class="breed-info">Maine Coons are known for their large size, tufted ears, and bushy tails.</p>
+            </div>
+        </div>
+
+        <!-- Dog 2 -->
+        <div class="pet-card">
+            <img class="pet-image" src="https://th.bing.com/th/id/OIP.a9UGyV5aKxvVG9G3cLjS1QHaFj?rs=1&pid=ImgDetMain" alt="Dog 2">
+            <div class="pet-details">
+                <h3>Dog 2</h3>
+                <p>Species: Dog</p>
+                <p>Breed: Golden Retriever</p>
+                <p class="breed-info">Golden Retrievers are friendly, intelligent, and devoted companions.</p>
+            </div>
+        </div>
+
+
+
+
+        <!-- Parrot 1 -->
+        <div class="pet-card">
+            <img class="pet-image" src="https://i.pinimg.com/736x/69/e2/e9/69e2e9cd082c665dd0dff0fd98f79503.jpg" alt="Parrot 1">
+            <div class="pet-details">
+                <h3>Parrot 1</h3>
+                <p>Species: Indian Parrot</p>
+                <p>Breed:Indian ringnecks</p>
+                <p class="breed-info"> Green Parrots are intelligent, amusing and affectionate. Green Parrots are very easy to train..</p>
+            </div>
+        </div> 
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Rabbit 1 -->
+        <div class="pet-card">
+            <img class="pet-image" src="https://www.rd.com/wp-content/uploads/2020/04/GettyImages-694542042-e1586274805503-scaled.jpg" alt="Rabbit">
+            <div class="pet-details">
+                <h3>Rabbit 1</h3>
+                <p>Species: American Rabbit</p>
+                <p>Breed:Florida White</p>
+                <p class="breed-info">The white rabbit is a symbol known worldwide and throughout many cultures.
+					 It brings hope,beginnings, and tranquility,as well as gentleness,kindness,innocence and humility.</p>
+            </div>
+        </div> 
+        
+              <div class="pet-card">
+            <img class="pet-image" src="https://hips.hearstapps.com/hmg-prod/images/unique-dog-names-1542399434.jpg" alt="Dog 3">
+            <div class="pet-details">
+                <h3>Dog 3</h3>
+                <p>Species: Dog</p>
+                <p>Breed: German shefhard</p>
+                <p class="breed-info">The German shepherd dog is a herding breed known for its courage,loyalty and guarding instincts.
+					 and aslo an excellent guard dog, police dog, military dog, guide dog for the blind and search and rescue dog.</p>
+            </div>
+        </div>
+        
+        
+        
+
+        <!-- Add more pet cards as needed -->
+
+    </div>
+
+    
+
+    
+    
+    <br>
+    <button class="action-button" onclick="openReviewPage()">Review</button>
+    
+    <script>
+        // Existing script...
+
+        function openLoginPage() {
+            // Redirect to the login.html page
+            window.location.href = 'login.html';
+        }
+
+        function openRegisterPage() {
+            // Redirect to the register.html page
+            window.location.href = 'register.html';
+        }
+        
+        
+                function openReviewPage() {
+            // Redirect to the review.html page
+            window.location.href = 'review.html';
+        }
+        
+        
+        
+    </script>
+
+</body>
+</html>

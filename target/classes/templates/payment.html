@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Payment</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient( #FF5733 0%, #ac1ce6 100%);
+        }
+
+        .container {
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .image-container {
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .form-container {
+            flex: 1;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .confirmation-container {
+            display: none;
+            text-align: center;
+            padding: 30px;
+        }
+
+        h2 {
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+
+        label, select, input {
+            display: block;
+            margin: 10px 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .payment-fields {
+            display: none;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .confirmation-message {
+            color: #27ae60;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .visit-again {
+            color: #333;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img src="https://img.freepik.com/premium-vector/pet-care-logo-creative-concept-hand-animal-dog-cat_669794-123.jpg?w=2000" alt="Payment Image">
+        </div>
+
+        <div class="form-container">
+            <h2>Secure Payment</h2>
+            <form id="paymentForm" action="#" method="post">
+
+                <label for="paymentMethod">Select Payment Method:</label>
+                <select id="paymentMethod" name="paymentMethod" onchange="togglePaymentFields()" required>
+                    <option value="" disabled selected>Select Payment Method</option>
+                    <option value="atmCard">ATM Card</option>
+                    <option value="googlePay">Google Pay</option>
+                    <option value="phonePay">Phone Pay</option>
+                    <option value="cash">Cash</option>
+                </select>
+
+                <!-- ATM Card Section -->
+                <div id="atmCardFields" class="payment-fields">
+                    <label for="cardNumber">Card Number:</label>
+                    <input type="text" id="cardNumber" name="cardNumber" placeholder="**** **** **** ****" required>
+
+                    <label for="expiryDate">Expiry Date:</label>
+                    <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" required>
+
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv" placeholder="***" required>
+                </div>
+
+                <!-- Google Pay Section -->
+                <div id="googlePayFields" class="payment-fields">
+                    <!-- Add Google Pay specific fields here -->
+                </div>
+
+                <!-- Phone Pay Section -->
+                <div id="phonePayFields" class="payment-fields">
+                    <!-- Add Phone Pay specific fields here -->
+                </div>
+
+                <!-- Cash Section -->
+                <div id="cashFields" class="payment-fields">
+                    <!-- Add Cash specific fields here -->
+                </div>
+
+                <label for="amount">Amount:</label>
+                <input type="text" id="amount" name="amount" placeholder="Enter amount" required>
+
+                <button type="button" onclick="showConfirmation()">Proceed to Payment</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Confirmation Message Section -->
+        <div class="confirmation-container" id="confirmationContainer">
+
+        <div class="confirmation-message"><h1>Thank You for Your Payment!</h1></div>
+        <div class="visit-again"><h2>Visit Again Soon!</h2></div>
+        <button onclick="redirectToAnotherPage()">Click me</button>
+
+    <script>
+        function redirectToAnotherPage() {
+            // Redirect to another HTML page
+            window.location.href = 'pets.html';
+        }
+    </script>
+    </div>
+
+    <script>
+        function togglePaymentFields() {
+            var selectedMethod = document.getElementById('paymentMethod').value;
+
+            // Hide all payment fields
+            var allFields = document.getElementsByClassName('payment-fields');
+            for (var i = 0; i < allFields.length; i++) {
+                allFields[i].style.display = 'none';
+            }
+
+            // Show fields based on the selected payment method
+            if (selectedMethod) {
+                var selectedFields = document.getElementById(selectedMethod + 'Fields');
+                if (selectedFields) {
+                    selectedFields.style.display = 'block';
+                }
+            }
+        }
+
+        function showConfirmation() {
+            // Hide the form container
+            document.querySelector('.form-container').style.display = 'none';
+
+            // Show the confirmation container
+            document.getElementById('confirmationContainer').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
